@@ -97,6 +97,8 @@ APP_DATA appData;
 /* TODO:  Add any necessary local functions.
 */
 
+extern void APP_WIFI_Initialize(void);
+extern void APP_WIFI_Tasks(void);
 
 // *****************************************************************************
 // *****************************************************************************
@@ -114,16 +116,11 @@ APP_DATA appData;
 
 void APP_Initialize ( void )
 {
-    /* Place the App state machine in its initial state. */
-    appData.state = APP_STATE_INIT;
+    APP_WIFI_Initialize();
 
-    
-    /* TODO: Initialize your application's state machine and other
-     * parameters.
-     */
-    SYS_CONSOLE_MESSAGE("APP_initialize: done\r\n");
+    /* Place the application state machine in its initial state. */
+    appData.state = APP_GREETING;
 }
-
 
 /******************************************************************************
   Function:
@@ -132,46 +129,10 @@ void APP_Initialize ( void )
   Remarks:
     See prototype in app.h.
  */
-
 void APP_Tasks ( void )
 {
-
-    /* Check the application's current state. */
-    switch ( appData.state )
-    {
-        /* Application's initial state. */
-        case APP_STATE_INIT:
-        {
-            bool appInitialized = true;
-       
-        
-            if (appInitialized)
-            {
-                SYS_CONSOLE_MESSAGE("APP_Tasks: Fully initialized, doing service tasks\r\n");
-                appData.state = APP_STATE_SERVICE_TASKS;
-            }
-            break;
-        }
-
-        case APP_STATE_SERVICE_TASKS:
-        {
-        
-            break;
-        }
-
-        /* TODO: implement your application state machine.*/
-        
-
-        /* The default state should never be executed. */
-        default:
-        {
-            /* TODO: Handle error in application's state machine. */
-            break;
-        }
-    }
+    APP_WIFI_Tasks();
 }
-
- 
 
 /*******************************************************************************
  End of File

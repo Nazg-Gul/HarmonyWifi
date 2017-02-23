@@ -289,13 +289,13 @@ extern "C" {
 #define DRV_WIFI_DEFAULT_NETWORK_TYPE       DRV_WIFI_NETWORK_TYPE_INFRASTRUCTURE
 #define DRV_WIFI_DEFAULT_CHANNEL_LIST       {} /* Channel list in domain - use default in module */
 #define DRV_WIFI_DEFAULT_LIST_RETRY_COUNT   (DRV_WIFI_RETRY_FOREVER) /* Number (1..255) of times to try to connect to AP when using Infrastructure network type */
-#define DRV_WIFI_DEFAULT_SSID               "MicrochipDemoApp"
+#define DRV_WIFI_DEFAULT_SSID               "MySSID"
 
-#define DRV_WIFI_DEFAULT_SECURITY_MODE      DRV_WIFI_SECURITY_OPEN
+#define DRV_WIFI_DEFAULT_SECURITY_MODE      DRV_WIFI_SECURITY_WPA2_WITH_PASS_PHRASE
 #define DRV_WIFI_DEFAULT_WEP_PHRASE         "WEP Phrase" // default WEP passphrase
 #define DRV_WIFI_DEFAULT_WEP_KEY_40         "5AFB6C8E77" // default WEP40 key
 #define DRV_WIFI_DEFAULT_WEP_KEY_104        "90E96780C739409DA50034FCAA" // default WEP104 key
-#define DRV_WIFI_DEFAULT_PSK_PHRASE         "Microchip 802.11 Secret PSK Password" // default WPA passphrase
+#define DRV_WIFI_DEFAULT_PSK_PHRASE         "MyPSKPhrase" // default WPA passphrase
 #define DRV_WIFI_DEFAULT_WPS_PIN            "12390212" // default WPS PIN
 
 #define DRV_WIFI_SAVE_WPS_CREDENTIALS       DRV_WIFI_DISABLED
